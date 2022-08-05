@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.lua": "lua",
+        "tcp_socket.h": "c",
+        "export.h": "c",
+        "stdlib.h": "c"
+    }
+}
