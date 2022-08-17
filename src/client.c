@@ -37,7 +37,6 @@ int main(int argc, char const *const *argv)
 
     socket = amqp_tcp_socket_new(conn);
 
-
     status = amqp_socket_open(socket, hostname, port);
 
     amqp_login(conn, "/", 0, 131072, 0, AMQP_SASL_METHOD_PLAIN,
@@ -55,8 +54,8 @@ int main(int argc, char const *const *argv)
                            &props, amqp_cstring_bytes(messagebody));
     }
 
-  amqp_channel_close(conn, 1, AMQP_REPLY_SUCCESS);
-  amqp_connection_close(conn, AMQP_REPLY_SUCCESS);
-  amqp_destroy_connection(conn);
-  return 0;
+    amqp_channel_close(conn, 1, AMQP_REPLY_SUCCESS);
+    amqp_connection_close(conn, AMQP_REPLY_SUCCESS);
+    amqp_destroy_connection(conn);
+    return 0;
 }
